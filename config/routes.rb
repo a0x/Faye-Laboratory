@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  get  '/login' => 'sessions#new', :as => :login
-  post '/login' => 'sessions#create', :as => :login
+  get 'chats/room'
+
+  get  '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+
+  get '/chatroom' => 'chats#room'
 end

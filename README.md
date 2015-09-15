@@ -1,7 +1,11 @@
-# Faye-Tutorial
+# Faye Laboratory
 
 This project is to test my personal thinking about Faye, yet, this is an experimental code repo.
 
+Also, the project is currently rails-only, because I have no time to expand into Node.js now.
+
 ## RUN
 
-rackup faye.ru -E production -s thin
+```
+rails s
+```

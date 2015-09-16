@@ -9,3 +9,7 @@ Also, the project is currently rails-only, because I have no time to expand into
 ```
 rails s
 ```
+
+## LICENSE
+
+This project is under [MIT LICENSE](LICENSE).

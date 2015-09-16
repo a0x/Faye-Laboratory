@@ -25,8 +25,9 @@ module FayeTutorial
 
     # Faye
     config.middleware.delete Rack::Lock
-    config.middleware.use FayeRails::Middleware, mount: '/faye', timeout: 25 do
+    config.middleware.use FayeRails::Middleware, mount: '/faye', timeout: 20 do
       map '/chatroom' => ChattingController
+      map '/editor'   => EditingController
     end
   end
 end

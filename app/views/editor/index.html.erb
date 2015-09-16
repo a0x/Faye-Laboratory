@@ -1,0 +1,27 @@
+<div class="edit_container">
+  <textarea type="text" id="editor" name="content"></textarea>
+</div>
+
+<script>
+$(function() {
+  // Create a new client to connect to Faye
+  var client = new Faye.Client('http://localhost:3000/faye');
+
+  // Handle form submissions and post messages to faye
+  $('#editor').keyup(function(){
+    // Publish the message to the public channel
+    client.publish('/messages/public', {
+      msg: $('#editor').val()
+    });
+
+    // Subscribe to the public channel
+    var public_subscription = client.subscribe('/messages/public', function(data) {
+      if (data.msg == $('#editor').val()) {
+        return;
+      } else {
+        $('#editor').val(data.msg);
+      }
+    });
+  });
+});
+</script>
